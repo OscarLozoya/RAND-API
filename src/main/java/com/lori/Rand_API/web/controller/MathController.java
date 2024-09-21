@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MathController {
     @GetMapping("/")
     public ResponseEntity<String> sayHellobro(){
-        return new ResponseEntity("Hello controller context", HttpStatus.OK);
+        return new ResponseEntity<String>("Hello controller context", HttpStatus.OK);
+    }
+
+    @GetMapping("/fibonacciOf5")
+    public ResponseEntity<String> getFibonnaci(){
+        return new ResponseEntity<>(String.valueOf(5), HttpStatus.OK);
     }
 }
