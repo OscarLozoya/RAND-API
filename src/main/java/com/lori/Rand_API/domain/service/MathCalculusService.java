@@ -40,4 +40,28 @@ public class MathCalculusService {
         }
         return result.toString();
     }
+
+     public String fibonacciRecursive(int nums){
+        List<Long> result = new ArrayList<>();
+        long current = 0;
+        long next = 1;
+        long operation;
+        result.add(current);
+        result.add(next);
+        int iteration = 0;
+        calculusfibo(nums, current, next,result);
+        return result.toString();
+    }
+
+    public static void calculusfibo(int iterations, long current, long next, List<Long> result){
+            if(iterations > 0){
+                long resulto = current + next;
+                result.add(resulto);
+                current = next;
+                next = resulto;
+                iterations-=1;
+                calculusfibo( iterations, current, next, result);
+            }
+    }
+
 }
