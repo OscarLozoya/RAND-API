@@ -20,4 +20,21 @@ public class StringManipulatingService {
             original = original.concat(words.get(i).concat(" "));
         return original;
     }
+
+    /**
+     * Palindrome exercise*
+     *
+     */
+    public boolean isPalindrome(String chain){
+        chain = chain.toLowerCase().replace(" ","");
+        char[] xchain = chain.toCharArray();
+        int endChain = xchain.length-1;
+        boolean result = true;
+        for(int i = endChain, e=0 ; i >= 0 && result; i--, e++) {
+            if (xchain[i] != xchain[e])
+                result = false;
+        }
+        return result;
+    }
+
 }
